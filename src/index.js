@@ -8,7 +8,7 @@ const deleteSelectedButton = document.getElementById('delete-selected');
 const hardcodedTasks = [
   { text: 'Buy Groceries', completed: false },
   { text: 'Complete ToDo List Project', completed: true },
-  { text: 'Do coding challenges', completed: false }
+  { text: 'Do coding challenges', completed: false },
 ];
 
 function saveTasksToLocalStorage() {
