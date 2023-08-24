@@ -5,6 +5,12 @@ const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
 const deleteSelectedButton = document.getElementById('delete-selected');
 
+const hardcodedTasks = [
+  { text: 'Buy Groceries', completed: false },
+  { text: 'Complete ToDo List Project', completed: true },
+  { text: 'Do coding challenges', completed: false }
+];
+
 function saveTasksToLocalStorage() {
   const tasks = [];
   const taskItems = taskList.querySelectorAll('li');
@@ -17,16 +23,18 @@ function saveTasksToLocalStorage() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// save data on local storage
-const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-savedTasks.forEach((savedTask) => {
-  const li = document.createElement('li');
-  li.innerHTML = `
-    <input type="checkbox" ${savedTask.completed ? 'checked' : ''}>
-    <span>${savedTask.text}</span>
-  `;
-  taskList.appendChild(li);
-});
+function displayTasks() {
+  hardcodedTasks.forEach((task) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <input type="checkbox" ${task.completed ? 'checked' : ''}>
+      <span>${task.text}</span>
+    `;
+    taskList.appendChild(li);
+  });
+}
+
+displayTasks();
 
 taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
