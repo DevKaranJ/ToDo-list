@@ -1,3 +1,4 @@
+// main.js
 import './style.css';
 import { saveTasksToLocalStorage, updateIndexes } from './modules/taskFunctions.js';
 import { addTaskToList, updateTaskTextDecoration, deleteSelectedTasks } from './modules/taskListFunctions.js';
