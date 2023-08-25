@@ -1,7 +1,7 @@
 // main.js
 import './style.css';
-import { saveTasksToLocalStorage, updateIndexes } from './modules/taskFunctions';
-import { addTaskToList, updateTaskTextDecoration, deleteSelectedTasks } from './modules/taskListFunctions';
+import { saveTasksToLocalStorage, updateIndexes } from './modules/taskFunctions.js';
+import { addTaskToList, updateTaskTextDecoration, deleteSelectedTasks } from './modules/taskListFunctions.js';
 import { enableTaskEditing, saveTaskEdit } from './modules/editFunctions.js';
 
 const taskForm = document.getElementById('task-form');
