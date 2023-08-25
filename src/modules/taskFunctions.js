@@ -15,6 +15,6 @@ export function saveTasksToLocalStorage(taskList) {
 export function updateIndexes(taskList) {
   const taskItems = taskList.querySelectorAll('li');
   taskItems.forEach((taskItem, index) => {
-    taskItem.dataset.index = index;
+    taskItem.dataset.index = index + 1;
   });
 }

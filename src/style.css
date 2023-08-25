@@ -65,3 +65,17 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
 }
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 8px; /* Adjust padding as needed */
+  border-bottom: 1px solid #ccc; /* Add a border between list items */
+}
+
+.delete-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 75%;
+}

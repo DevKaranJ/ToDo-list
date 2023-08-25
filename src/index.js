@@ -1,4 +1,3 @@
-// main.js
 import './style.css';
 import { saveTasksToLocalStorage, updateIndexes } from './modules/taskFunctions.js';
 import { addTaskToList, updateTaskTextDecoration, deleteSelectedTasks } from './modules/taskListFunctions.js';
@@ -27,7 +26,8 @@ taskForm.addEventListener('submit', (event) => {
   const taskText = taskInput.value.trim();
   if (taskText === '') return;
 
-  addTaskToList(taskList, taskText);
+  const newIndex = taskList.children.length + 1;
+  addTaskToList(taskList, taskText, newIndex);
 
   taskInput.value = '';
 
@@ -70,3 +70,28 @@ taskList.addEventListener('dblclick', (event) => {
     });
   }
 });
+
+// Adding delete button functionality
+taskList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('delete-button')) {
+    const listItem = findParentListItem(event.target);
+    if (listItem) {
+      taskList.removeChild(listItem);
+
+      // After deleting, update indexes
+      updateIndexes(taskList);
+      saveTasksToLocalStorage(taskList);
+    }
+  }
+});
+
+function findParentListItem(element) {
+  let parent = element.parentElement;
+  while (parent !== null) {
+    if (parent.tagName === 'LI') {
+      return parent;
+    }
+    parent = parent.parentElement;
+  }
+  return null;
+}
