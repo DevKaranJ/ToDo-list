@@ -23,7 +23,7 @@ export function deleteSelectedTasks(taskList) {
   selectedCheckboxes.forEach((checkbox) => {
     const listItem = checkbox.closest('.task-item');
     if (listItem) {
-    taskList.removeChild(listItem);
+      taskList.removeChild(listItem);
     }
   });
 
