@@ -15,13 +15,11 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -105,7 +103,14 @@ Run it in your local server
 
 
 
-- Setting Up A Professional Github Repository.
+- Due Dates and Reminders:
+Allow users to set due dates for tasks and receive reminders or notifications when deadlines are approaching.
+
+- Task History and Versioning:
+Keep a history of task changes and versions, so users can track modifications and revert to previous states if needed.
+
+- Mobile App or Responsive Design:
+Develop a mobile app or optimize the web interface for mobile devices to provide a seamless experience on various screens.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
