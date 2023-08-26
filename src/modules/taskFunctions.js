@@ -3,8 +3,9 @@ export function saveTasksToLocalStorage(taskList) {
   const tasks = [];
   const taskItems = taskList.querySelectorAll('li');
   taskItems.forEach((taskItem, index) => {
-    const text = taskItem.querySelector('span').textContent;
-    tasks.push({ index: index + 1, text });
+    const text = taskItem.querySelector('.task-item span').textContent;
+    const completed = taskItem.querySelector('.task-checkbox').checked;
+    tasks.push({ index: index + 1, text, completed });
   });
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
