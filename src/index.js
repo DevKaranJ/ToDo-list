@@ -3,7 +3,7 @@ import './style.css';
 import { saveTasksToLocalStorage, updateIndexes } from './modules/taskFunctions.js';
 import { addTaskToList } from './modules/taskListFunctions.js';
 import { enableTaskEditing, saveTaskEdit } from './modules/editFunctions.js';
-import { addCheckboxFunctionality } from './modules/checkboxes.js';
+import { addCheckboxFunctionality, addClearCompletedFunctionality } from './modules/checkboxes.js';
 
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
@@ -12,7 +12,7 @@ const deleteSelectedButton = document.getElementById('delete-selected');
 
 // After adding tasks from local storage
 addCheckboxFunctionality(taskList);
-
+addClearCompletedFunctionality(taskList);
 // Save data to local storage on page load
 const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 savedTasks.forEach((savedTask) => {

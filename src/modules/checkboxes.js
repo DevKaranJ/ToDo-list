@@ -13,8 +13,24 @@ export function addCheckboxFunctionality(taskList) {
             saveTasksToLocalStorage(taskList);
           }
         }
+      });   
+}
+
+export function addClearCompletedFunctionality(taskList) {
+  const clearButton = document.getElementById('delete-selected');
+  
+  clearButton.addEventListener('click', () => {
+      const completedTasks = Array.from(taskList.querySelectorAll('.completed'));
+      
+      completedTasks.forEach(task => {
+          const listItem = findParentListItem(task);
+          if (listItem) {
+              listItem.remove();
+          }
       });
       
+      saveTasksToLocalStorage(taskList);
+  });
 }
 
 function findParentListItem(element) {
