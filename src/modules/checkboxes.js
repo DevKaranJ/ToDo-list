@@ -1,13 +1,12 @@
 // checkboxes.js
 import { saveTasksToLocalStorage } from './taskFunctions.js';
 
-// Add checkbox functionality to tasks
 export function addCheckboxFunctionality(taskList) {
   taskList.addEventListener('change', (event) => {
     if (event.target.classList.contains('task-checkbox')) {
       const listItem = findParentListItem(event.target);
       if (listItem) {
-        const taskText = listItem.querySelector('.task-item span'); // Updated selector
+        const taskText = listItem.querySelector('.task-item span');
         taskText.classList.toggle('completed', event.target.checked);
 
         saveTasksToLocalStorage(taskList);
@@ -27,6 +26,17 @@ export function addClearCompletedFunctionality(taskList) {
       if (listItem) {
         listItem.remove();
       }
+    });
+
+    saveTasksToLocalStorage(taskList);
+
+    const allTasks = Array.from(taskList.querySelectorAll('li'));
+
+    const activeTasks = allTasks.filter((task) => !task.querySelector('.task-checkbox').checked);
+
+    taskList.innerHTML = '';
+    activeTasks.forEach((task) => {
+      taskList.appendChild(task);
     });
 
     saveTasksToLocalStorage(taskList);
