@@ -4,8 +4,8 @@ export function saveTasksToLocalStorage(taskList) {
   const taskItems = taskList.querySelectorAll('li');
   taskItems.forEach((taskItem, index) => {
     const text = taskItem.querySelector('span').textContent;
-    const completed = false; // Set the completed property to false for new tasks
-    tasks.push({ index: index + 1, text, completed }); // Include the completed property in the task object
+    const completed = false;
+    tasks.push({ index: index + 1, text, completed });
   });
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
