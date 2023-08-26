@@ -7,6 +7,13 @@ export function addCheckboxFunctionality(taskList) {
       const listItem = findParentListItem(event.target);
       if (listItem) {
         const taskText = listItem.querySelector('.task-item span');
+      
+        // Update the completed key in the local storage data
+        const tasks = JSON.parse(localStorage.getItem('tasks'));
+        const taskIndex = Array.from(taskList.querySelectorAll('li')).indexOf(listItem);
+        tasks[taskIndex].completed = event.target.checked;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
         taskText.classList.toggle('completed', event.target.checked);
 
         saveTasksToLocalStorage(taskList);
