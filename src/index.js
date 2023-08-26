@@ -8,7 +8,6 @@ import { addCheckboxFunctionality, addClearCompletedFunctionality } from './modu
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
-const deleteSelectedButton = document.getElementById('delete-selected');
 
 // After adding tasks from local storage
 addCheckboxFunctionality(taskList);
@@ -32,7 +31,6 @@ taskForm.addEventListener('submit', (event) => {
 
   saveTasksToLocalStorage(taskList);
 });
-
 
 taskList.addEventListener('dblclick', (event) => {
   if (event.target.tagName === 'SPAN') {
