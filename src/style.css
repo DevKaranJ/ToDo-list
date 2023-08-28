@@ -67,15 +67,16 @@ input[type="checkbox"] {
 }
 
 .task-item {
+  position: relative;
   display: flex;
   align-items: center;
-  padding: 8px; /* Adjust padding as needed */
-  border-bottom: 1px solid #ccc; /* Add a border between list items */
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
 }
 
 .delete-button {
   padding: 5px 10px;
   cursor: pointer;
   position: absolute;
-  left: 770px;
+  left: 330px;
 }
