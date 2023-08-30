@@ -28,7 +28,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
-    "test": "jest --coverage",
+    "test": "jest",
     "test:esm": "node --experimental-vm-modules node_modules/.bin/jest --coverage"
   },
   "keywords": [],
